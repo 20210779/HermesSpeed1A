@@ -97,13 +97,23 @@ CONSTRAINT fk_genero
 FOREIGN KEY (id_genero)
 REFERENCES generos (id_genero)
 );
+create table colores(
+id_color int primary key Not null,
+color_zapato varchar(40)
+);
 
+CREATE TABLE tallas(
+id_talla INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+tamaño_talla INT NOT NULL,
+id_producto INT NOT NULL,
+CONSTRAINT fk_productoss
+FOREIGN KEY (id_producto)
+REFERENCES productos (id_producto)
+);
 
 CREATE TABLE detalle_zapatos(
 id_zapato INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-color_zapato VARCHAR(50),
-size_talla DOUBLE NOT NULL,
-cantidad_talla ENUM('en_reserva','agotados') NOT NULL, 
+cantidad_talla int, 
 id_imagen INT NOT NULL,
 CONSTRAINT fk_imagen
 FOREIGN KEY (id_imagen)
@@ -111,7 +121,15 @@ REFERENCES imagenes (id_imagen),
 id_producto INT NOT NULL,
 CONSTRAINT fk_producto
 FOREIGN KEY (id_producto)
-REFERENCES productos (id_producto)
+REFERENCES productos (id_producto),
+id_color INT NOT NULL,
+CONSTRAINT fk_color
+FOREIGN KEY (id_color)
+REFERENCES colores (id_color),
+id_talla  INT NOT NULL,
+CONSTRAINT fk_tallas
+FOREIGN KEY (id_talla)
+REFERENCES tallas (id_talla)
 );
 
 CREATE TABLE detalle_pedidos(
@@ -141,12 +159,11 @@ FOREIGN KEY (id_detalle)
 REFERENCES detalle_pedidos (id_detalle)
 );
 
-CREATE TABLE tallas(
-id_talla INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-tamaño_talla INT NOT NULL,
-id_producto INT NOT NULL,
-CONSTRAINT fk_talla
-FOREIGN KEY (id_producto)
-REFERENCES productos (id_producto)
-);
+
+
+
+DROP DATABASE bdHERMESPEEDdp;
+
+
+
 
