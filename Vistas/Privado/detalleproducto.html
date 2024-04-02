@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--=================================-->
-    <link rel="stylesheet" href="../../Recursos/style.css">
+    <link rel="stylesheet" href="../../Recursos/css/style_privado.css">
 </head>
 
 <body>
@@ -73,11 +73,38 @@
         <h3><span class="badge bg-dark p-1 mt-2">Administrador de productos</span></h3>
     </section>
 
-
+    <!--==================-->
+    <!--VENTANA EMERGENTE ELIMINAR-->
+    <!--==================-->
+    <div class="modal fade" id="bEliminar" tabindex="-1" aria-labelledby="bEliminarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bEliminarLabel">Advertencia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row-container-fluid ms-4 ps-5">
+                        <div class="col ms-5 ps-5 mb-2">
+                            <i class="fa-solid fa-circle-exclamation" style="font-size: 120px; color: #eede00;"></i>
+                        </div>
+                        <div class="col ms-5 ps-2">
+                            <p class="justify-content-center">¿Quieres eliminar el producto?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i
+                            class="fa-solid fa-circle-xmark"></i></button>
+                    <button type="button" class="btn btn-success"><i class="fa-regular fa-circle-check"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!--===============================================-->
     <!--BARRA DE BUSQUEDA-->
     <!--===============================================-->
-
     <div class="container overflow-hidden mt-5">
         <div class="row justify-content-between">
             <div class="col-7">
@@ -147,7 +174,7 @@
                         <!--==================-->
                         <!--BOTON ELIMINAR-->
                         <!--==================-->
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Beliminar">
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#bEliminar">
                             <i class="fa-solid fa-minus"></i>
                         </button>
 
@@ -173,14 +200,14 @@
         </div>
     </footer>
 
-<!--================-->
+    <!--================-->
     <!--VENTANA ABIERTA EDITAR-->
     <!--===============-->
-    <div class="modal fade" id="B_edit_producto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="B_edit_producto" tabindex="-1" aria-labelledby="bEliminarLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-tile" id="exampleModalLabel">Actualizar un producto</h5>
+                    <h5 class="modal-tile" id="bEliminarLabel">Actualizar un producto</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -238,11 +265,11 @@
     <!--VENTANA ABIERTA AGREGAR-->
     <!--===============-->
 
-    <div class="modal fade" id="Bproducto_agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="Bproducto_agregar" tabindex="-1" aria-labelledby="bEliminarLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Crear un producto</h5>
+                    <h5 class="modal-title" id="bEliminarLabel">Crear un producto</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -282,8 +309,7 @@
                                 <i class="fa-solid fa-circle-chevron-down"></i>
                             </div>
                             <div class="col-5">
-                                <select class="form-select" id="aroundworld"
-                                    aria-label="Floating label select ejemplo">
+                                <select class="form-select" id="aroundworld" aria-label="Floating label select ejemplo">
                                     <option selected>Puma</option>
                                     <option value="1">Adidas</option>
                                     <option value="2">Nike</option>
@@ -302,45 +328,14 @@
         </div>
     </div>
 
-    <!--==================-->
-    <!--VENTANA EMERGENTE ELIMINAR-->
-    <!--==================-->
-    <div class="modal fade" id="Beliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Advertencia</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row-container-fluid ms-4 ps-5">
-                        <div class="col ms-5 ps-5 mb-2">
-                            <i class="fa-solid fa-circle-exclamation" style="font-size: 120px; color: #eede00;"></i>
-                        </div>
-                        <div class="col ms-5 ps-2">
-                            <p class="justify-content-center">¿Quieres eliminar el producto?</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i
-                            class="fa-solid fa-circle-xmark"></i></button>
-                    <button type="button" class="btn btn-success"><i class="fa-regular fa-circle-check"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--====================-->
     <!--VENTANA EMERGENTE CAMBIOS REALIZADOS-->
     <!--====================-->
-    <div class="modal fade" id="BCambios_productos" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="BCambios_productos" tabindex="-1" aria-labelledby="bEliminarLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cambios realizados</h5>
+                    <h5 class="modal-title" id="bEliminarLabel">Cambios realizados</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -362,12 +357,6 @@
             </div>
         </div>
     </div>
-
-
-    
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

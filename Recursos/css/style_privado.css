@@ -135,3 +135,14 @@ body {
 .blue_color_fixer *:hover{
   color: #3a3a3a;
 }
+
+.nav-item .nav-link{
+  color: black;
+  border-radius: 3px;
+  transition: 0.5s ease;
+}
+
+.nav-item .nav-link:hover{
+  color: #B10000;
+  text-shadow: 1px 1px 1px #B10000;
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HermeSpeed</title>
+    <!--Libreria para fuentes de iconos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!------------------------->
+    <link rel="stylesheet" href="../../Recursos/css/style_publico.css">
+</head>
+
+<body>
+    <!--================-->
+    <!--ENCABEZADO-->
+    <!--================-->
+    <header class="container-fluid bg-dark d-flex justify-content-center">
+        <p class="mb-0 p-1">Contáctanos 2039-3939</p>
+    </header>
+
+    <!--=============-->
+    <!--NAVBAR-->
+    <!---============-->
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF;">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img class="ms-5" id="" src="../../Recursos/img/logo.png" alt="logo" width="70" height="64">
+
+            <div class="row" id="ajustarBoton">
+                <div class="col dropdown mt-1 pe-1">
+                    <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/Recursos/img/Perfil.jpg" alt="" width="32" height="32" class="rounded-circle me-1">
+
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li class="ms-3"><strong>Manu</strong></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+                <div class="col ps-1">
+                    <a class="btn blue_color_fixer" aria-current="page" href="index.html">
+                        <i class="fa-solid fa-cart-shopping" style="margin-top: 2px;"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"><strong>Menu</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="hombre.html"><strong>Hombre</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><strong>Mujer</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><strong>Niños</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sobre_nosotros.html"><strong>Sobre
+                                nosotros</strong></a>
+                    </li>
+                </ul>
+                <form class="d-flex" id="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!--=================-->
+    <!---SECCION DE COMPRAS-->
+    <!--=================-->
+
+    <div class="row">
+        <!--=====================-->
+        <!--SECCION IZQUIERDA-->
+        <!--=====================-->
+        <div class="col-md-7">
+            <div class="container-xl mt-3">
+                <div class="row">
+                    <div class="col">
+                        <h3><strong>TU BOLSA</strong></h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mt-2">
+                        <p>Los artículos en su bolso no están reservados; consulte ahora para hacerlos suyos.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mt-2">
+                        <table class="table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Color</th>
+                                    <th scope="col">Talla</th>
+                                    <th scope="col">Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><img src="../../Recursos/img/zapato1.png" class="img-thumbnail"
+                                            alt="..." width="90px" height="90px"></th>
+                                    <td>Gazelle Pink Shoes</td>
+                                    <td>$160</td>
+                                    <td>Negro</td>
+                                    <td>5.5</td>
+                                    <td>
+                                        <div class="overflow-auto">
+                                            <select class="form-select form-select-sm"
+                                                aria-label=".form-select-sm example">
+                                                <option selected>1</option>
+                                                <option value="1">2</option>
+                                                <option value="2">3</option>
+                                                <option value="3">4</option>
+                                                <option value="2">5</option>
+                                                <option value="3">6</option>
+                                                <option value="2">7</option>
+                                                <option value="3">8</option>
+                                            </select>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--===============-->
+        <!--SECCION DERECHA-->
+        <!--===============-->
+
+        <!--==============-->
+        <!--BOTON DE COMPRA-->
+        <!--==============-->
+        <div class="col-md-5">
+            <div class="container-xl">
+                <div class="row mt-5">
+                    <div class="col-xl-10 order-md-1">
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-dark active" data-bs-toggle="button" autocomplete="off"
+                                aria-pressed="true">
+                                <h5><strong>COMPRAR</strong></h5>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--==========-->
+                    <!--RESUMEN PEDIDO-->
+                    <!--==========-->
+                    <div class="col order-md-2">
+                        <div class="row mt-4 ">
+                            <h4><strong>Detalle del pedido</strong></h4>
+                        </div>
+
+                        <div class="row mt-3">
+                            <dt class="col-xl-6 col-6">
+                                <p>1 Producto</p>
+                            </dt>
+                            <dd class="col-xl-4 col-6 text-end">
+                                <p>$160</p>
+                            </dd>
+                        </div>
+
+                        <div class="row">
+                            <dt class="col-xl-6 col-6">
+                                <p>Domicilio</p>
+                            </dt>
+                            <dd class="col-xl-4 col-6 text-end">
+                                <p>gratis</p>
+                            </dd>
+                        </div>
+
+                        <div class="row mt-2">
+                            <dt class="col-xl-6 col-6">
+                                <p>Total</p>
+                            </dt>
+                            <dt class="col-xl-4 col-6 text-end">
+                                <p>$160</p>
+                            </dt>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <h3 class="text-start mt-4 ms-4">Otros productos que podrian interesarte</h3>
+
+    <!--================-->
+    <!--CARRUSEL DE CARDS-->
+    <!--================-->
+
+    <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+    <div class="container">
+        <div class="row">
+        </div>
+
+    </div>
+
+    <footer>
+
+        <div id="footerIndex"></div>
+
+    </footer>
+
+    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+    <script src="../../Controladores/Público/publicoF.js"></script>
+
+</body>
