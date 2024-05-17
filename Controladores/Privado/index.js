@@ -53,6 +53,7 @@ LOGIN_FORM.addEventListener('submit', async (event) => {
     // Petición para iniciar sesión.
     const DATA = await fetchData(USER_API, 'logIn', FORM);
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
+    console.log(DATA);
     if (DATA.status) {
         sweetAlert(1, DATA.message, true, 'menu.html');
     } else {

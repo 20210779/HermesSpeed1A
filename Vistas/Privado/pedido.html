@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title></title>
+  <link type="image/png" rel="icon" href="../../recursos/img/logo brillo.png">
+  <link type="text/css" href="../../recursos/css/boostrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <!-- Custom styles for this template -->
+  <link href="../../recursos/css/style_privado.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <main>
+
+    <!--===============-->
+    <!--SUBENCABEZADO-->
+    <!--===============-->
+    <section class="container-fluid d-flex justify-content-center">
+      <h2><span id="mainTitle" class="badge text-dark"></span></h2>
+    </section>
+
+    <!--===============================================-->
+    <!--BARRA DE BUSQUEDA-->
+    <!--===============================================-->
+    <!-- Formulario de búsqueda -->
+    <div class="container overflow-hidden mt-5">
+      <div class="row justify-content-between">
+        <div class="col-7">
+          <form class="d-flex" id="searchForm">
+            <input type="search" class="form-control me-2" name="search" placeholder="Buscar" required>
+            <button type="submit" class="btn btn-success">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button type="reset" class="btn btn-secondary" onclick="fillTable()">
+              <i class="fa-solid fa-ban"></i>
+            </button>
+          </form>
+        </div>
+        <div class="col-2">
+        </div>
+      </div>
+    </div>
+
+
+    <!--==================-->
+    <!--LISTA DE PRODUCTOS-->
+    <!--===================-->
+    <div class="table-responsive-xl container mt-4">
+      <table class="table table-hover align-middle">
+        <!-------------------------->
+        <!--Encabezado de la tabla-->
+        <!-------------------------->
+        <thead>
+          <!-- Cabeza de la tabla para mostrar la cantidad de registros y los títulos de las columnas -->
+          <tr>
+            <td colspan="6" id="rowsFound"></td>
+          </tr>
+          <tr>
+            <th scope="col">PEDIDO</th>
+            <th scope="col">CLIENTE</th>
+            <th scope="col">FECHA</th>
+            <th scope="col">DIRECCION</th>
+            <th scope="col">ESTADO</th>
+            <th scope="col">ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- Componente Modal para guardar un registro -->
+    <div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalTitle"></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!-- Formulario para crear o actualizar un registro -->
+          <form id="saveForm">
+            <div class="modal-body row g-3">
+              <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+              <input type="number" class="d-none" id="idPedido" name="idPedido">
+              <div class="col-sm-12 col-md-6">
+                <label for="estadoPedido" class="form-label">Estado</label>
+                <select id="estadoPedido" type="text" name="estadoPedido" class="form-select" required>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+<!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
+  <script src="../../controladores/privado/privado.js"></script>  
+  <!-- Llamada al framework y librería de mensajes -->
+  <script src="../../recursos/js/boostrap.bundle.min.js"></script>
+  <script src="../../recursos/js/sweetalert.min.js"></script>
+  <!-- Llamada al controlador general de la aplicación -->
+  <script type="text/javascript" src="../../controladores/utilidades/componentes.js"></script> 
+  <!-- Llamada al controlador del sitio privado -->
+  <script type="text/javascript" src="../../controladores/utilidades/admin.js"></script>
+  <!-- Llamada al controlador de la página web -->
+  <script type="text/javascript" src="../../controladores/privado/pedido.js"></script>
+</body>
+
+</html>

@@ -150,6 +150,36 @@ class Validator
         }
     }
 
+    public static function validateEnum($value, $enumOptions)
+{
+    // Se verifica si el valor está dentro de las opciones válidas del ENUM.
+    if (in_array($value, $enumOptions)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+public static function validateShoeSize($value)
+{
+    // Se verifica que el valor esté dentro del rango común de tallas de zapato (por ejemplo, de 35 a 45).
+    if ($value >= 1 && $value <= 9) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+public static function validateStar($value)
+{
+    // Se verifica que el valor esté dentro del rango común de tallas de zapato (por ejemplo, de 35 a 45).
+    if ($value >= 1 && $value <= 5) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
     /*
     *   Método para validar un dato alfabético (letras y espacios en blanco).
     *   Parámetros: $value (dato a validar).

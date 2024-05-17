@@ -35,7 +35,7 @@ if (isset($_GET['action'])) {
                     !$administrador->setClave($_POST['claveAdmin'])
                 ) {
                     $result['error'] = $administrador->getDataError();
-                } elseif ($_POST['claveAdministrador'] != $_POST['confirmarClave']) {
+                } elseif ($_POST['claveAdmin'] != $_POST['confirmarClave']) {
                     $result['error'] = 'Contraseñas diferentes';
                 } elseif ($administrador->createRow()) {
                     $result['status'] = 1;
@@ -78,9 +78,9 @@ if (isset($_GET['action'])) {
                 }
                 break;
             case 'deleteRow':
-                if ($_POST['idAdministrador'] == $_SESSION['idAdministrador']) {
+                if ($_POST['idAdmin'] == $_SESSION['idAdmin']) {
                     $result['error'] = 'No se puede eliminar a sí mismo';
-                } elseif (!$administrador->setId($_POST['idAdministrador'])) {
+                } elseif (!$administrador->setId($_POST['idAdmin'])) {
                     $result['error'] = $administrador->getDataError();
                 } elseif ($administrador->deleteRow()) {
                     $result['status'] = 1;
@@ -90,9 +90,9 @@ if (isset($_GET['action'])) {
                 }
                 break;
             case 'getUser':
-                if (isset($_SESSION['aliasAdministrador'])) {
+                if (isset($_SESSION['aliasAdmin'])) {
                     $result['status'] = 1;
-                    $result['username'] = $_SESSION['aliasAdministrador'];
+                    $result['username'] = $_SESSION['aliasAdmin'];
                 } else {
                     $result['error'] = 'Alias de administrador indefinido';
                 }
@@ -124,7 +124,7 @@ if (isset($_GET['action'])) {
                 } elseif ($administrador->editProfile()) {
                     $result['status'] = 1;
                     $result['message'] = 'Perfil modificado correctamente';
-                    $_SESSION['aliasAdmin'] = $_POST['aliasAdmin'];
+                    $_SESSION['aliasAdmin'] = $_POST['aliasAdministrador'];
                 } else {
                     $result['error'] = 'Ocurrió un problema al modificar el perfil';
                 }

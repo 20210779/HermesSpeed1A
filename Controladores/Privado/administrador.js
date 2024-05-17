@@ -10,12 +10,12 @@ const SAVE_MODAL = new bootstrap.Modal('#saveModal'),
     MODAL_TITLE = document.getElementById('modalTitle');
 // Constantes para establecer los elementos del formulario de guardar.
 const SAVE_FORM = document.getElementById('saveForm'),
-    ID_ADMINISTRADOR = document.getElementById('idAdministrador'),
-    NOMBRE_ADMINISTRADOR = document.getElementById('nombreAdministrador'),
-    APELLIDO_ADMINISTRADOR = document.getElementById('apellidoAdministrador'),
-    CORREO_ADMINISTRADOR = document.getElementById('correoAdministrador'),
-    ALIAS_ADMINISTRADOR = document.getElementById('aliasAdministrador'),
-    CLAVE_ADMINISTRADOR = document.getElementById('claveAdministrador'),
+    ID_ADMINISTRADOR = document.getElementById('idAdmin'),
+    NOMBRE_ADMINISTRADOR = document.getElementById('nombreAdmin'),
+    APELLIDO_ADMINISTRADOR = document.getElementById('apellidoAdmin'),
+    CORREO_ADMINISTRADOR = document.getElementById('correoAdmin'),
+    ALIAS_ADMINISTRADOR = document.getElementById('aliasAdmin'),
+    CLAVE_ADMINISTRADOR = document.getElementById('claveAdmin'),
     CONFIRMAR_CLAVE = document.getElementById('confirmarClave');
 
 // Método del evento para cuando el documento ha cargado.
@@ -81,16 +81,16 @@ const fillTable = async (form = null) => {
             // Se crean y concatenan las filas de la tabla con los datos de cada registro.
             TABLE_BODY.innerHTML += `
                 <tr>
-                    <td>${row.apellido_administrador}</td>
-                    <td>${row.nombre_administrador}</td>
-                    <td>${row.correo_administrador}</td>
-                    <td>${row.alias_administrador}</td>
+                    <td>${row.apellido_admin}</td>
+                    <td>${row.nombre_admin}</td>
+                    <td>${row.correo_admin}</td>
+                    <td>${row.alias_admin}</td>
                     <td>
-                        <button type="button" class="btn btn-info" onclick="openUpdate(${row.id_administrador})">
-                            <i class="bi bi-pencil-fill"></i>
+                        <button type="button" class="btn btn-info" onclick="openUpdate(${row.id_admin})">
+                        <i class="fa-solid fa-pen-to-square"></i>
                         </button>
-                        <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_administrador})">
-                            <i class="bi bi-trash-fill"></i>
+                        <button type="button" class="btn btn-danger" onclick="openDelete(${row.id_admin})">
+                        <i class="fa-solid fa-trash"></i>
                         </button>
                     </td>
                 </tr>

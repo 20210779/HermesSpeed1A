@@ -57,14 +57,14 @@ class AdministradorHandler
         $sql = 'UPDATE administradores
                 SET clave_admin = ?
                 WHERE id_admin = ?';
-        $params = array($this->clave, $_SESSION['idadmin']);
+        $params = array($this->clave, $_SESSION['idAdmin']);
         return Database::executeRow($sql, $params);
     }
 
     public function readProfile()
     {
         $sql = 'SELECT id_admin, nombre_admin, apellido_admin, correo_admin, alias_admin
-                FROM administradorrs
+                FROM administradores
                                 WHERE id_admin = ?';
         $params = array($_SESSION['idAdmin']);
         return Database::getRow($sql, $params);
@@ -75,7 +75,7 @@ class AdministradorHandler
         $sql = 'UPDATE administradores
                 SET nombre_admin = ?, apellido_admin = ?, correo_admin = ?, alias_admin = ?
                 WHERE id_admin = ?';
-        $params = array($this->nombre, $this->apellido, $this->correo, $this->alias, $_SESSION['idAdministrador']);
+        $params = array($this->nombre, $this->apellido, $this->correo, $this->alias, $_SESSION['idAdmin']);
         return Database::executeRow($sql, $params);
     }
 
@@ -84,7 +84,7 @@ class AdministradorHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_admin, nombre_admin, apellido_admin, correo_admini, alias_admin
+        $sql = 'SELECT id_admin, nombre_admin, apellido_admin, correo_admin, alias_admin
                 FROM administradores
                 WHERE apellido_admin LIKE ? OR nombre_admin LIKE ?
                 ORDER BY apellido_admin';
@@ -94,8 +94,8 @@ class AdministradorHandler
 
     public function createRow()
     {
-        $sql = 'INSERT INTO administradores(nombre_admin, apellido_admin, correo_admin, alias_admin, clave_admin,fecha_registroA)
-                VALUES(?, ?, ?, ?, ?,?)';
+        $sql = 'INSERT INTO administradores(nombre_admin, apellido_admin, correo_admin, alias_admin, clave_admin)
+                VALUES(?, ?, ?, ?, ?)';
         $params = array($this->nombre, $this->apellido, $this->correo, $this->alias, $this->clave);
         return Database::executeRow($sql, $params);
     }
