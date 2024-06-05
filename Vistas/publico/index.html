@@ -1,279 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE-edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HermeSpeed</title>
-  <!--Libreria para fuentes de iconos-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="../../recursos/css/style_privado.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!--=================================-->
-  <link rel="stylesheet" href="../../recursos/css/style_publico.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title></title>
+    <link type="image/png" href="../../recursos/img/logo.png" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link type="text/css" href="../../recursos/css/boostrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <!-- Custom styles for this template -->
+    <link href="../../recursos/css/style_publico.css" rel="stylesheet">
+
 </head>
 
 <body>
-  <!--================-->
-  <!--ENCABEZADO-->
-  <!--================-->
-  <header class="container-fluid bg-dark d-flex justify-content-center">
-    <p class="mb-0 p-1">Contáctanos 2039-3939</p>
-  </header>
-
-
-  <!--===============-->
-  <!--BARRA DE NAVEGACIÓN-->
-  <!--===============-->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF;">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <img class="ms-5" id="" src="../../recursos/img/logo.png" alt="logo" width="70" height="64">
-
-      <div class="row" id="ajustarBoton">
-        <div class="col dropdown mt-1 pe-1">
-          <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
-            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="/recursos/img/Perfil.jpg" alt="" width="32" height="32" class="rounded-circle me-1">
-
-          </a>
-          <ul class="dropdown-index dropdown-index-ligth text-small shadow" aria-labelledby="dropdownUser1">
-            <li class="ms-3"><strong>Manu</strong></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="sesion.html">Sign out</a></li>
-          </ul>
-        </div>
-        <div class="col ps-1">
-          <a class="btn blue_color_fixer" aria-current="page" href="carrito.html">
-            <i class="fa-solid fa-cart-shopping" style="margin-top: 2px;"></i>
-          </a>
-        </div>
-
-      </div>
-
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html"><strong>index</strong></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="hombre.html"><strong>Hombre</strong></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="mujer.html"><strong>Mujer</strong></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="nino.html"><strong>Niños</strong></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="sobre_nosotros.html"><strong>Sobre
-                nosotros</strong></a>
-          </li>
-        </ul>
-        <form class="d-flex" id="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-
-
-      </div>
-    </div>
-  </nav>
-
-
-  <!--===============-->
-  <!--ENCABEZADO-->
-  <!--===============-->
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1400">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../../recursos/img/ZapatoCarrusel1.png" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../recursos/img/ZapatoCarrusel2.png" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../recursos/img/ZapatoCarrusel3.png" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-        <h2 style="color: #FFFFFF;">Descubre tu pasión por el juego</h2>
-        <p style="color: black;"><strong>encuentra los mejores calzados para usarlos al maximo en la cancha.</strong>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!--===============-->
-  <!--SUBENCABEZADO-->
-  <!--===============-->
-  <section class="container-fluid d-flex bg-dark justify-content-center">
-    <h2 class="display-6"><span class="badge bg-dark p-1 mt-2">Novedades</span></h2>
-  </section>
-
-
-
-
-  <!--==================-->
-  <!--Sección de package-->
-  <!--==================-->
-  <div class="container mt-2" id="product-cards">
-    <div class="row" style="margin-top: 30px;">
-
-      <div class="col-md-3 py-3 py-md-0">
-        <a href="producto.html" class="blue_color_fixer">
-          <div class="card mb-2">
-            <img src="../../recursos/img/zapato5.png" alt="">
-            <div class="card-body">
-              <h3>Gazelle Pink Shoes</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-              <div class="star">
-                <i class="fa-solid fa-star" style="font-size: 20px;"></i>
-              </div>
-              <h5>$43.20 </h5>
+    <main>
+        <!--===============-->
+        <!--ENCABEZADO-->
+        <!--===============-->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1400">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../../recursos/img/ZapatoCarrusel1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../recursos/img/ZapatoCarrusel2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../recursos/img/ZapatoCarrusel3.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 style="color: #FFFFFF;">Descubre tu pasión por el juego</h2>
+                    <p style="color: black;"><strong>encuentra los mejores calzados para usarlos al maximo en la
+                            cancha.</strong>
+                    </p>
+                </div>
             </div>
-          </div>
-        </a>
-      </div>
+        </div>
 
-      <div class="col-md-3 py-3 py-md-0">
-        <div class="card mb-2">
-          <img src="../../recursos/img/zapato7.png" alt="">
-          <div class="card-body">
-            <h3>Gazelle Cake Shoes</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <div class="star">
-              <i class="fa-solid fa-star" style="font-size: 20px;"></i>
+        <!--===============-->
+        <!--SUBENCABEZADO-->
+        <!--===============-->
+        <section class="container-fluid d-flex bg-dark justify-content-center">
+            <h2 class="display-6"><span class="badge bg-dark p-1 mt-2">Novedades</span></h2>
+        </section>
+
+        <!--==================-->
+        <!--Sección de package-->
+        <!--==================-->
+        <div class="container mt-2" id="product-cards">
+            <div class="row" style="margin-top: 30px;" id="productos"></div>
+            <a href="#" id="viewmorebtn">Ver todo</a>
+        </div>
+
+        <!--===============-->
+        <!----DESCUENTO---->
+        <!--===============-->
+        <section class="discount py-4">
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <div class="col-lg-9 m-auto text-center text-light">
+                        <h3><strong>UNETE A HERMESPEED Y OBTEN UN 20% DE DESCUENTO</strong></h3>
+                    </div>
+                    <div class="col-lg-2 m-auto">
+                        <button class="dbtn" href="hombre.html"><strong>PULSA AQUÍ</strong><span>
+                                <i class="fa-solid fa-angles-right" style="padding-top: 4px;"></i></span></button>
+                    </div>
+                </div>
             </div>
-            <h5>$43.20 </h5>
-          </div>
-        </div>
-      </div>
+        </section>
+    </main>
 
-      <div class="col-md-3 py-3 py-md-0">
-        <div class="card mb-2">
-          <img src="../../recursos/img/zapato10.png" alt="">
-          <div class="card-body">
-            <h3>Ultraboost 1.0 Shoes</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <div class="star">
-              <i class="fa-solid fa-star" style="font-size: 20px;"></i>
-            </div>
-            <h5>$43.20 </h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 py-3 py-md-0">
-        <div class="card mb-2">
-          <img src="../../recursos/img/zapato9.png" alt="">
-          <div class="card-body">
-            <h3>Ultraboost 1.0 Shoes</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <div class="star">
-              <i class="fa-solid fa-star" style="font-size: 20px;"></i>
-            </div>
-            <h5>$43.20 </h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 py-3 py-md-0">
-        <div class="card mb-2">
-          <img src="../../recursos/img/zapato4.png" alt="">
-          <div class="card-body">
-            <h3>Samba OG Shoes</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <div class="star">
-              <i class="fa-solid fa-star" style="font-size: 20px;"></i>
-            </div>
-            <h5>$43.20 </h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 py-3 py-md-0">
-        <div class="card mb-2">
-          <img src="../../recursos/img/zapato1.png" alt="">
-          <div class="card-body">
-            <h3>Sambae Xs Shoes</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <div class="star">
-              <i class="fa-solid fa-star" style="font-size: 20px;"></i>
-            </div>
-            <h5>$43.20 </h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 py-3 py-md-0">
-        <div class="card mb-2">
-          <img src="../../recursos/img/zapato2.png" alt="">
-          <div class="card-body">
-            <h3>Samba OG Shoes</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <div class="star">
-              <i class="fa-solid fa-star" style="font-size: 20px;"></i>
-            </div>
-            <h5>$43.20 </h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 py-3 py-md-0">
-        <div class="card mb-2">
-          <img src="../../recursos/img/zapato3.png" alt="">
-          <div class="card-body">
-            <h3>Gazelle Bold Shoes</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <div class="star">
-              <i class="fa-solid fa-star" style="font-size: 20px;"></i>
-            </div>
-            <h5>$43.20 </h5>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <a href="#" id="viewmorebtn">Ver todo</a>
-  </div>
-
-  <!--===============-->
-  <!----DESCUENTO---->
-  <!--===============-->
-  <section class="discount py-4">
-    <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-lg-9 m-auto text-center text-light">
-          <h3><strong>UNETE A HERMESPEED Y OBTEN UN 20% DE DESCUENTO</strong></h3>
-        </div>
-        <div class="col-lg-2 m-auto">
-          <button class="dbtn" href="hombre.html"><strong>PULSA AQUÍ</strong><span>
-              <i class="fa-solid fa-angles-right" style="padding-top: 4px;"></i></span></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--=============-->
-  <!----FOOTER---->
-  <!--=============-->
-  <footer >
-
-    <div id="footerIndex"></div>
-
-</footer>
-
-<script src="../../controladores/publico/publicoF.js"></script>
-  <script src="../../recursos/js/boostrap.bundle.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    
+    <script type="text/javascript" src="../../recursos/js/boostrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../recursos/js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../../controladores/utilidades/componentes.js"></script>
+    <script type="text/javascript" src="../../controladores/utilidades/public.js"></script>
+    <script type="text/javascript" src="../../controladores/publico/index.js"></script>
 </body>

@@ -2,8 +2,8 @@
 console.log("Vinculo exitoso");
 
 // Selecciona los campos de entrada del username y password.
-const usernameLField = document.querySelector("[name=usuario]");
-const passwordLField = document.querySelector("[name=contraseña]");
+const usernameLField = document.querySelector("[name=correo]");
+const passwordLField = document.querySelector("[name=clave]");
 
 const validateEmptyField = (e) => {
     const field = e.target;

@@ -14,7 +14,7 @@ class DetalleZapatoHandler
     protected $imagen_producto = null;
     protected $color_zapato = null;
     protected $marca_zapato = null; 
-    
+    protected $id_valoracion = null; 
 
     // Constante para establecer la ruta de las imágenes.
     const RUTA_IMAGEN = '../../images/productos/';
@@ -25,7 +25,8 @@ class DetalleZapatoHandler
     public function searchRows()
     {
         $value = '%' . Validator::getSearchValue() . '%';
-        $sql = 'SELECT id_zapato, nombre_producto, precio_producto, imagen_producto, tamano_talla, color_zapato,existencias_producto, estado_producto,nombre_marca
+        $sql = 'SELECT id_zapato, nombre_producto, precio_producto, imagen_producto, tamano_talla,
+         color_zapato,existencias_producto, estado_producto,nombre_marca
         FROM detalle_zapatos
         INNER JOIN productos USING(id_producto)
         INNER JOIN tallas USING(id_talla)
@@ -47,12 +48,14 @@ class DetalleZapatoHandler
 
     public function readAll()
     {
-        $sql = 'SELECT id_zapato, nombre_producto, precio_producto, imagen_producto, tamano_talla, color_zapato,existencias_producto, estado_producto,nombre_marca
+        $sql = 'SELECT id_zapato, nombre_producto, precio_producto, imagen_producto, tamano_talla,
+         color_zapato,existencias_producto, estado_producto,nombre_marca, calificacion_producto
         FROM detalle_zapatos
         INNER JOIN productos USING(id_producto)
         INNER JOIN tallas USING(id_talla)
         INNER JOIN colores USING(id_color)
         INNER JOIN marcas USING(id_marca)
+        INNER JOIN valoraciones USING(id_valoracion)
         ORDER BY nombre_producto';
         return Database::getRows($sql);
     }

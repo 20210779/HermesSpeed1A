@@ -101,6 +101,60 @@ class ProductoHandler
         return Database::getRows($sql, $params);
     }
 
+    public function readProductosCategoriaHFutbol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                WHERE nombre_categoria = "futbol" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+    
+    public function readProductosCategoriaHBasquetboll()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                WHERE nombre_categoria = "basquetboll" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+    
+    public function readProductosCategoriaHVoleibol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                WHERE nombre_categoria = "voleibol" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaHTenis()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                WHERE nombre_categoria = "tenis" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaHDeportivos()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                WHERE nombre_categoria = "calsado_deportivos" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
     /*
     *   Métodos para generar gráficos.
     */
