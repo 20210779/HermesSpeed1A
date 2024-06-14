@@ -40,28 +40,16 @@ const loadTemplate = async () => {
         </button>
         <img class="ms-5" id="" src="../../recursos/img/logo.png" alt="logo" width="70" height="64">
         <div class="row" id="ajustarBoton">
-          <div class="col dropdown mt-1 pe-1">
-            <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
-              id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="/recursos/img/Perfil.jpg" alt="" width="32" height="32" class="rounded-circle me-1">
-  
-            </a>
-            <ul class="dropdown-index dropdown-index-dark text-small shadow" aria-labelledby="dropdownUser1">
-              <li class="ms-3"><strong>Manu</strong></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
+          <div class="col pe-1">
+          <a class="btn blue_color_fixer" aria-current="page" href="sesion.html">
+            <i class="fa-solid fa-user" style="margin-top: 2px;"></i>
+          </a>
           </div>
           <div class="col ps-1">
-            <a class="btn blue_color_fixer" aria-current="page" href="index.html">
+            <a class="btn blue_color_fixer" aria-current="page" href="carrito.html">
               <i class="fa-solid fa-cart-shopping" style="margin-top: 2px;"></i>
             </a>
           </div>
-  
         </div>
   
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -176,3 +164,5 @@ const loadTemplate = async () => {
     `
   );
 };
+
+

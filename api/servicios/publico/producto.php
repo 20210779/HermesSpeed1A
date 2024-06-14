@@ -10,15 +10,22 @@ if (isset($_GET['action'])) {
     $result = array('status' => 0, 'message' => null, 'dataset' => null, 'error' => null, 'exception' => null);
     // Se compara la acción a realizar según la petición del controlador.
     switch ($_GET['action']) {
-        case 'readProductosCategoria':
-            if (!$producto->setCategoria($_POST['idCategoria'])) {
+        case 'readProductosID':
+            if (!$producto->setId($_POST['idProducto'])) {
                 $result['error'] = $producto->getDataError();
-            } elseif ($result['dataset'] = $producto->readProductosCategoria()) {
+            } elseif ($result['dataset'] = $producto->readProductosID()) {
                 $result['status'] = 1;
             } else {
-                $result['error'] = 'No existen productos para mostrar';
+                $result['error'] = 'No se haya el id de este producto';
             }
             break;
+            case 'readProductosCategoriaHFutbol':
+                if ($result['dataset'] = $producto->readProductosCategoriaHFutbol()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'No existen productos para mostrar';
+                }
+                break;
         case 'readAll':
             if ($result['dataset'] = $producto->readAll()) {
                 $result['status'] = 1;

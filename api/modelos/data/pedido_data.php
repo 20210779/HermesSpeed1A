@@ -28,17 +28,67 @@ class PedidoData extends PedidoHandler
         }
     }
 
-    
-    public function setCliente($value, $min = 2, $max = 50)
+    public function setIdDetalle($value)
     {
-        if (!Validator::validateAlphanumeric($value)) {
-            $this->data_error = 'El cliente debe ser un valor alfanumérico';
+        if (Validator::validateNaturalNumber($value)) {
+            $this->id_detalle = $value;
+            return true;
+        } else {
+            $this->data_error = 'El identificador del detalle pedido es incorrecto';
             return false;
-        } elseif (Validator::validateLength($value, $min, $max)) {
+        }
+    }
+    public function setCliente($value)
+    {
+        if (Validator::validateNaturalNumber($value)) {
             $this->cliente_pedido = $value;
             return true;
         } else {
-            $this->data_error = 'El cliente debe tener una longitud entre ' . $min . ' y ' . $max;
+            $this->data_error = 'El identificador del cliente es incorrecto';
+            return false;
+        }
+    }
+
+    public function setProducto($value)
+    {
+        if (Validator::validateNaturalNumber($value)) {
+            $this->producto = $value;
+            return true;
+        } else {
+            $this->data_error = 'El identificador del producto es incorrecto';
+            return false;
+        }
+    }
+
+    public function setFecha($value)
+    {
+        if (Validator::validateDate($value)) {
+            $this->fecha_pedido = $value;
+            return true;
+        } else {
+            $this->data_error = 'La fecha de registro no es valida';
+            return false;
+        }
+    }
+
+    public function setTalla($value)
+    {
+        if (Validator::validateNaturalNumber($value)) {
+            $this->talla_pedido = $value;
+            return true;
+        } else {
+            $this->data_error = 'La talla es incorrecta';
+            return false;
+        }
+    }
+
+    public function setColor($value)
+    {
+        if (Validator::validateNaturalNumber($value)) {
+            $this->color_pedido = $value;
+            return true;
+        } else {
+            $this->data_error = 'El color es incorrecto';
             return false;
         }
     }
@@ -57,6 +107,17 @@ class PedidoData extends PedidoHandler
         }
     }
 
+    public function setCantidad($value)
+    {
+        if (Validator::validateNaturalNumber($value)) {
+            $this->cantidad = $value;
+            return true;
+        } else {
+            $this->data_error = 'La cantidad del producto debe ser mayor o igual a 1';
+            return false;
+        }
+    }
+
     public function setEstado($value,$enum_Options)
     {
         if (Validator::validateEnum($value,$enum_Options)) {
@@ -68,24 +129,14 @@ class PedidoData extends PedidoHandler
         }
     }
 
-    public function setFecha($value)
-    {
-        if (Validator::validateDate($value)) {
-            $this->fecha_pedido = $value;
-            return true;
-        } else {
-            $this->data_error = 'La fecha de registro no es valida';
-            return false;
-        }
-    }
-
-     /*
-     *  Método para obtener los atributos adicionales.
-     */
+     // Método para obtener el error de los datos.
     public function getDataError()
     {
         return $this->data_error;
     }
-
-
 }
+
+
+
+        
+

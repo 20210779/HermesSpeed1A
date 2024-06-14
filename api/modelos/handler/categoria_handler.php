@@ -47,6 +47,16 @@ class CategoriaHandler
         return Database::getRows($sql);
     }
 
+    public function readProductosCategoriaHFutbol()
+    {
+        $sql = 'SELECT id_categoria, nombre_categoria, imagen_categoria, descripcion_categoria
+                FROM categorias
+                WHERE nombre_categoria = "Football"
+                ORDER BY nombre_categoria';
+        return Database::getRows($sql);
+    }
+
+
     public function readOne()
     {
         $sql = 'SELECT id_categoria, nombre_categoria, imagen_categoria, descripcion_categoria

@@ -101,12 +101,46 @@ class ProductoHandler
         return Database::getRows($sql, $params);
     }
 
-    public function readProductosCategoriaHFutbol()
+    public function readProductosID()
     {
         $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
                 FROM productos
+                WHERE id_producto = ? AND estado_producto = true
+                ORDER BY nombre_producto';
+        $params = array($this->id_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaHFutbol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
                 INNER JOIN categorias USING(id_categoria)
-                WHERE nombre_categoria = "futbol" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Football" AND nombre_genero = "Hombre"
+                ORDER BY nombre_producto';
+        return Database::getRows($sql);
+    }
+
+    public function readProductosCategoriaMFutbol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Football" AND nombre_genero = "Mujer"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaNFutbol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Football" AND nombre_genero = "Niño"
                 ORDER BY nombre_producto';
         $params = array($this->categoria_producto);
         return Database::getRows($sql, $params);
@@ -114,10 +148,71 @@ class ProductoHandler
     
     public function readProductosCategoriaHBasquetboll()
     {
-        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
                 FROM productos
                 INNER JOIN categorias USING(id_categoria)
-                WHERE nombre_categoria = "basquetboll" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Basketball" AND nombre_genero = "Hombre"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaMBasquetboll()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Basketball" AND nombre_genero = "Mujer"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaNBasquetboll()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Basketball" AND nombre_genero = "Niño"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaHBeisbol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Baseball" AND nombre_genero = "Hombre"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaMBeisbol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Baseball" AND nombre_genero = "Mujer"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaNBeisbol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Baseball" AND nombre_genero = "Niño"
                 ORDER BY nombre_producto';
         $params = array($this->categoria_producto);
         return Database::getRows($sql, $params);
@@ -125,10 +220,35 @@ class ProductoHandler
     
     public function readProductosCategoriaHVoleibol()
     {
-        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
                 FROM productos
                 INNER JOIN categorias USING(id_categoria)
-                WHERE nombre_categoria = "voleibol" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Voleyball" AND nombre_genero = "Hombre"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaMVoleibol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Voleyball" AND nombre_genero = "Mujer"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaNVoleibol()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Voleyball" AND nombre_genero = "Niño"
                 ORDER BY nombre_producto';
         $params = array($this->categoria_producto);
         return Database::getRows($sql, $params);
@@ -136,10 +256,35 @@ class ProductoHandler
 
     public function readProductosCategoriaHTenis()
     {
-        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
                 FROM productos
                 INNER JOIN categorias USING(id_categoria)
-                WHERE nombre_categoria = "tenis" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Tennis" AND nombre_genero = "Hombre"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaMTenis()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Tennis" AND nombre_genero = "Mujer"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaNTenis()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Tennis" AND nombre_genero = "Niño"
                 ORDER BY nombre_producto';
         $params = array($this->categoria_producto);
         return Database::getRows($sql, $params);
@@ -147,10 +292,35 @@ class ProductoHandler
 
     public function readProductosCategoriaHDeportivos()
     {
-        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
                 FROM productos
                 INNER JOIN categorias USING(id_categoria)
-                WHERE nombre_categoria = "calsado_deportivos" AND id_categoria IN (SELECT id_categoria FROM categorias WHERE nombre_categoria = "hombres")
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Deportivo" AND nombre_genero = "Hombre"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaMDeportivos()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Deportivo" AND nombre_genero = "Mujer"
+                ORDER BY nombre_producto';
+        $params = array($this->categoria_producto);
+        return Database::getRows($sql, $params);
+    }
+
+    public function readProductosCategoriaNDeportivos()
+    {
+        $sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, nombre_genero
+                FROM productos
+                INNER JOIN categorias USING(id_categoria)
+                INNER JOIN generos USING(id_genero)
+                WHERE nombre_categoria = "Deportivo" AND nombre_genero = "Niño"
                 ORDER BY nombre_producto';
         $params = array($this->categoria_producto);
         return Database::getRows($sql, $params);

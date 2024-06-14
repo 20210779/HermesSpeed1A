@@ -17,6 +17,13 @@ if (isset($_GET['action'])) {
                 $result['error'] = 'No existen categorías para mostrar';
             }
             break;
+            case 'readProductosCategoriaHFutbol':
+                if ($result['dataset'] = $categoria->readProductosCategoriaHFutbol()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'No existen categorías para mostrar';
+                }
+                break;
         default:
             $result['error'] = 'Acción no disponible';
     }

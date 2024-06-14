@@ -2,7 +2,7 @@
 const PRODUCTO_API = 'servicios/publico/producto.php';
 // Constante tipo objeto para obtener los parámetros disponibles en la URL.
 const PARAMS = new URLSearchParams(location.search);
-const PRODUCTOS = document.getElementById('productos');
+const PRODUCTOS = document.getElementById('idProducto');
 
 // Método manejador de eventos para cuando el documento ha cargado.
 document.addEventListener('DOMContentLoaded', async () => {
@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadTemplate();
     // Se define un objeto con los datos de la categoría seleccionada.
     const FORM = new FormData();
-    FORM.append('idCategoria', PARAMS.get('id'));
+    FORM.append('idProducto', PARAMS.get('id'));
     // Petición para solicitar los productos de la categoría seleccionada.
-    const DATA = await fetchData(PRODUCTO_API, 'readProductosCategoria', FORM);
+    const DATA = await fetchData(PRODUCTO_API, 'readAll');
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se asigna como título principal la categoría de los productos.
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                             <li class="list-group-item">Existencias ${row.existencias_producto}</li>
                         </ul>
                         <div class="card-body text-center">
-                            <a href="detail.html?id=${row.id_producto}" class="btn btn-primary">Ver detalle</a>
+                            <a href="producto.html?id=${row.id_producto}" class="btn btn-primary">Ver detalle</a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 // Constante para completar la ruta de la API.
-// el nombre es por el producto en categorias, la H es de la categoria de hombre y la D de su subcategoria de Calsado Deportivo
+// el nombre es por el producto en categorias, la M es de la categoria de mujer y la Ba de su subcategoria de basquetboll
 const PRODUCTO_API = 'servicios/publico/producto.php';
 const CATEGORIA_API = 'servicios/publico/categoria.php';
 // Constante tipo objeto para obtener los parámetros disponibles en la URL.
@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const FORM = new FormData();
     FORM.append('idCategoria', PARAMS.get('id'));
     // Petición para solicitar los productos de la categoría seleccionada.
-    const DATA = await fetchData(PRODUCTO_API, 'readProductosCategoriaHDeportivos');
+    const DATA = await fetchData(PRODUCTO_API, 'readProductosCategoriaMBeisbol');
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         // Se asigna como título principal la categoría de los productos.
-        MAIN_TITLE.textContent = `Deportivo`;
+        MAIN_TITLE.textContent = `Baseball`;
         // Se inicializa el contenedor de productos.
         PRODUCTOS.innerHTML = '';
         // Se recorre el conjunto de registros fila por fila a través del objeto row.

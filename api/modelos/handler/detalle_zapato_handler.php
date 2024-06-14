@@ -11,10 +11,13 @@ class DetalleZapatoHandler
     */
     protected $id_zapato = null;
     protected $cantidad_talla = null;
+    protected $nombre_producto = null;
+    protected $descripcion_producto = null;
+    protected $precio_producto = null;
     protected $imagen_producto = null;
     protected $color_zapato = null;
     protected $marca_zapato = null; 
-    protected $id_valoracion = null; 
+    protected $valoracion_zapato = null; 
 
     // Constante para establecer la ruta de las imágenes.
     const RUTA_IMAGEN = '../../images/productos/';
@@ -62,12 +65,13 @@ class DetalleZapatoHandler
 
     public function readOne()
     {
-        $sql = 'SELECT id_zapato, nombre_producto, precio_producto, imagen_producto, tamano_talla, color_zapato,existencias_producto, estado_producto,nombre_marca
+        $sql = 'SELECT id_zapato,descripcion_producto,calificacion_producto, nombre_producto, precio_producto, imagen_producto, tamano_talla, color_zapato,existencias_producto, estado_producto,nombre_marca
                 FROM detalle_zapatos
                 INNER JOIN productos USING(id_producto)
                 INNER JOIN tallas USING(id_talla)
                 INNER JOIN colores USING(id_color)
                 INNER JOIN marcas USING(id_marca)
+                INNER JOIN valoraciones USING(id_valoracion)
                 WHERE id_zapato = ?';
         $params = array($this->id_zapato);
         return Database::getRow($sql, $params);
