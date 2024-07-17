@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title></title>
+    <link type="image/png" href="../../recursos/img/logo.png" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link type="text/css" href="../../recursos/css/boostrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <!-- Custom styles for this template -->
+    <link href="../../recursos/css/style_publico.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <main>
+        <!--=======-->
+        <!--SECCIÓN-->
+        <!--=======-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <img id="imagenProducto" class="img-fluid" alt="...">
+                </div>
+                <div class="row mt-3">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Detalles
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <ul class="list-unstyled">
+                                                <ul>
+                                                    <li>are unaffected by this style</li>
+                                                    <li>will still show a bullet</li>
+                                                    <li>and have appropriate left margin</li>
+                                                </ul>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <ul class="list-unstyled">
+                                                <ul>
+                                                    <li>are unaffected by this style</li>
+                                                    <li>will still show a bullet</li>
+                                                    <li>and have appropriate left margin</li>
+                                                </ul>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!--===============-->
+                <!--SECCION DERECHA-->
+                <!--================-->
+                <div class="row justify-content-between pt-1 mb-2 mt-2">
+                    <div class="col-5 text-start">
+                        Hombres <i class="fa-solid fa-circle" id="Circle_Size"></i> Tennis
+                    </div>
+                    <div class="col-5 text-end">
+                        <span id="valoracionProducto"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h2><strong id="nombreProducto"></strong></h2>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>$ <strong id="precioProducto"></strong></h4>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col">
+                        <p class="lead" id="descripcionProducto"></p>
+                    </div>
+                </div>
+
+                <form class="row" id="shoppingForm">
+                    <!-- Campo oculto para asignar el id del producto -->
+                    <input type="number" class="d-none" id="idProducto" name="idProducto">
+                    <div class="row mt-3">
+                        <div class="col-md-6 mb-3">
+                            <h5><strong>colores</strong></h5>
+                            <select id="colorZapato" name="colorZapato" class="form-select form-select-sm" required>
+                                <option value="">Seleccione un color</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <h5><strong>tallas</strong></h5>
+                            <select id="tallaZapato" name="tallaZapato" class="form-select form-select-sm"
+                                required></select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="cantidadProducto" name="cantidadProducto" min="1" class="form-control"
+                            placeholder="Ingrese cantidad" required>
+                    </div>
+                    <div class="col-6 align-self-end">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-cart-plus-fill"></i> Comprar
+                        </button>
+                    </div>
+                </form>
+
+                <div class="row mt-4 mb-4">
+                    <div class="d-grid gap-2 col-12">
+                        <button type="button" class="btn btn-dark active" data-bs-toggle="button" autocomplete="off"
+                            aria-pressed="true">
+                            <h3>Añadir al carrito</h3>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--=================-->
+  <!----COMENTARIOS----->
+  <!--=================-->
+  <div class="container-fluid mt-5">
+    <h3 class="ms-2"><strong>Comentarios</strong></h3>
+  
+    <!-- Comment form -->
+    <div class="card comment-box">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label><strong>Título</strong></label>
+            <input type="text" class="form-control" placeholder="Describe tu tema">
+          </div>
+          <div class="form-group mt-2">
+            <label><strong>Opinión</strong></label>
+            <textarea class="form-control fa-bold" placeholder="Describe lo que piensas de este producto"></textarea>
+          </div>
+          <div class="form-group mt-2 rating-stars">
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+          </div>
+          <button type="submit" class="btn btn-danger mt-3"><strong>Comentar</strong></button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="container-fluid mt-5">
+      <strong><span>Filtrar por puntuación:</span></strong>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="filter-stars">
+          
+          <button class="border border-dark btn btn-outline-dark btn-lg">★5</button>
+          <button class="border border-dark btn btn-outline-dark btn-lg">★4</button>
+          <button class="border border-dark btn btn-outline-dark btn-lg">★3</button>
+          <button class="border border-dark btn btn-outline-dark btn-lg">★2</button>
+          <button class="border border-dark btn btn-outline-dark btn-lg">★1</button>
+        </div>
+        <div class="sort-by">
+          <strong><span>Ver por:</span></strong>
+          <select class="form-control">
+            <option>Nuevos</option>
+            <option>Antiguos</option>
+            <option>Alta puntuación</option>
+            <option>Baja puntuación</option>
+          </select>
+        </div>
+      </div>
+    
+      <!-- Reviews -->
+      <div class="review">
+        <div class="review-header">
+          <div>
+            <span class="star-rating">★★★★★</span>
+            <span class="review-author"><strong>Joey564</strong></span>
+          </div>
+          <span class="review-date">June 7, 2024</span>
+        </div>
+        <div class="review-body">
+          <h5><strong>Esta compra fue muy buena.</strong></h5>
+          <p class="fst-normal">Disfruto usar estos zapatos con regularidad. Me encanta el look clásico, da vibraciones muy clásicas.</p>
+          <div class="d-flex align-items-center">
+            <span class="me-3">Helpful?</span>
+            <button class="btn btn-light btn-sm ml-2"><i class="fa-regular fa-thumbs-up"></i> 0</button>
+            <button class="btn btn-light btn-sm ml-2"><i class="fa-regular fa-thumbs-down"></i> 0</button>
+            <button class="btn btn-link btn-sm ms-2 text-dark">Report review</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="review">
+        <div class="review-header">
+          <div>
+            <span class="star-rating">★★★★★</span>
+            <span class="review-author"><strong>nino</strong></span>
+          </div>
+          <span class="review-date">June 6, 2024</span>
+        </div>
+        <div class="review-body">
+          <h5><strong>Lo amo UwU</strong></h5>
+          <p class="fs-normal"><strong>Color:</strong> Cloud White / Core Black / Gold Metallic<br>
+            Me encantan estos zapatos. gracias muy recomendable.....</p>
+          <div class="d-flex align-items-center">
+            <span class="me-3">Helpful?</span>
+            <button class="btn btn-light btn-sm ml-2"><i class="fa-regular fa-thumbs-up"></i> 0</button>
+            <button class="btn btn-light btn-sm ml-2"><i class="fa-regular fa-thumbs-down"></i> 0</button>
+            <button class="btn btn-link btn-sm ms-2 text-dark">Report review</button>
+          </div>
+        </div>
+      </div>
+    
+      <button class="btn btn-secondary btn-block">Ver más</button>
+    </div>
+    
+
+
+
+        <!--===============-->
+        <!----DESCUENTO---->
+        <!--===============-->
+        <section class="discount py-4">
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <div class="col-lg-9 m-auto text-center text-light">
+                        <h3><strong>UNETE A HERMESPEED Y OBTEN UN 20% DE DESCUENTO</strong></h3>
+                    </div>
+                    <div class="col-lg-2 m-auto">
+                        <button class="dbtn" href="hombre.html"><strong>PULSA AQUÍ</strong><span>
+                                <i class="fa-solid fa-angles-right" style="padding-top: 4px;"></i></span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============-->
+        <!----FOOTER---->
+        <!--=============-->
+        <footer>
+
+            <div id="footerIndex"></div>
+
+        </footer>
+
+    </main>
+
+    <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
+    <!-- Llamada al framework y librería de mensajes -->
+    <script type="text/javascript" src="../../recursos/js/boostrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../recursos/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controladores/utilidades/componentes.js"></script>
+    <!-- Llamada al controlador del sitio público -->
+    <script type="text/javascript" src="../../controladores/utilidades/public.js"></script>
+    <!-- Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controladores/publico/detalle_zapato.js"></script>
+</body>
+
+</html>

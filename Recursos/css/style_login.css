@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+  }
+
+body{
+    
+    background: linear-gradient(90deg, rgb(80, 55, 1) 0%, rgb(255, 238, 0) 35%, rgb(255, 174, 23) 100%);
+}
+
+.error{
+    color: brown;
+    display: block;
+}
+
+form{
+    width: 35%;
+    background-color:white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 120px;
+}
+
+#form-signup{
+    width: 50%;
+    background-color:white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 120px;
+}
+
+.btn-dark{
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+}
+
+.form-control{
+    color: black;
+    border-bottom-color: black;
+    box-shadow: none !important;
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 4px 4px 0 0;
+}
+
+.form-label{
+    font-family: 700 !important;
+}
+
+.blue_color_fixer *{
+    color:black;
+  }
+  
+  .blue_color_fixer *:hover{
+    color: black;
+  }
+
+/*MEDIA*/
+@media only screen and (max-width:768px){
+    form{
+        width: 100% !important;
+    }
+}
+
+

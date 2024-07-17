@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title></title>
+  <link type="image/png" href="../../recursos/img/logo.png" rel="icon">
+
+  <link type="text/css" href="../../recursos/css/boostrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <!-- Custom styles for this template -->
+  <link href="../../recursos/css/style_login.css" rel="stylesheet">
+  <link href="../../recursos/css/style_publico.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <main>
+    <h4 id="mainTitle"></h4>
+    <div class="container-fluid">
+      <form class="mx-auto" id="sessionForm">
+        <div class="container-fluid text-center">
+          <img src="../../recursos/img/logo brillo.png" alt="" width="170px" height="155px">
+        </div>
+        <div class="form-floating mt-4 mb-3">
+          <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico" required>
+          <label for="correo" class="form-label">Correo electrónico</label>
+        </div>
+        <div class="form-floating mt-4 mb-3">
+          <input type="password" id="clave" name="clave" class="form-control" placeholder="Password" required>
+          <label for="clave" class="form-label">Contraseña</label>
+        </div>
+        <!--<div id="emailHelp" class="form-text mt-3">Forget password</div>-->
+        <button type="submit" class="btn btn-dark mt-3 mb-3" role="button">Login</button>
+        <hr>
+        <div class="form-text mt-2 text-center">Don´t have an account?
+          <a class="btn" href="registro.html" role="button">Sign up</a>
+        </div>
+      </form>
+    </div>
+
+    <!--===========-->
+    <!--SCRIPT JS-->
+    <!--===========-->
+
+  </main>
+    <!-- IMPORTACIÓN DE ARCHIVOS JAVASCRIPT -->
+    <!-- Llamada al framework y librería de mensajes -->
+    <script src="../../recursos/js/boostrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../recursos/js/sweetalert.min.js"></script>
+    <!-- Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controladores/utilidades/componentes.js"></script>
+    <!-- Llamada al controlador del sitio público -->
+    <script type="text/javascript" src="../../controladores/utilidades/public.js"></script>
+    <!-- Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controladores/publico/login.js"></script>
+    <!--<script type="text/javascript" src="../../controladores/publico/validaciones.js"></script>-->
+  
+</body>

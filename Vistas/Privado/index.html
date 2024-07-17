@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title></title>
+
+  
+  
+  <link type="image/png" href="../../recursos/css/font.min.css" rel="icon">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+
+  <link type="text/css" href="../../recursos/css/boostrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <!-- Custom styles for this template -->
+  <link href="../../recursos/css/style_privado.css" rel="stylesheet">
+
+</head>
+
+<body class="text-center">
+
+  <main>
+    <h3 id="mainTitle"></h3>
+    <img class="mx-auto d-block mb-3" width="200" src="../../recursos/img/Login_log.png" alt="">
+    <h2 class="h4 mb-3 fw-normal">Bienvenido usuario ingrese sus datos antes de iniciar</h2>
+    <form class="form-signin" id="loginForm">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="alias" placeholder="name@example.com" name="alias">
+        <label for="alias">Nombre</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="clave" placeholder="Password" name="clave">
+        <label for="clave">Clave</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-warning" type="submit" role="button">Ingresar</button>
+      <p class="mt-4 mb-2 text-muted">&copy; HermeSpeed</p>
+    </form>
+
+
+
+     <!-- Formulario para crear el primer administrador -->
+     <form class="d-none" id="signupForm">
+      <div class="row g-3">
+          <div class="col-sm-12 col-md-6">
+              <label for="nombreAdministrador" class="form-label">Nombre</label>
+              <input id="nombreAdministrador" type="text" name="nombreAdministrador" class="form-control"
+                  required>
+          </div>
+          <div class="col-sm-12 col-md-6">
+              <label for="apellidoAdministrador" class="form-label">Apellido</label>
+              <input id="apellidoAdministrador" type="text" name="apellidoAdministrador" class="form-control"
+                  required>
+          </div>
+          <div class="col-sm-12 col-md-6">
+              <label for="correoAdministrador" class="form-label">Correo</label>
+              <input id="correoAdministrador" type="email" name="correoAdministrador" class="form-control"
+                  required>
+          </div>
+          <div class="col-sm-12 col-md-6">
+              <label for="aliasAdministrador" class="form-label">Alias</label>
+              <input id="aliasAdministrador" type="text" name="aliasAdministrador" class="form-control" required>
+          </div>
+          <div class="col-sm-12 col-md-6">
+              <label for="claveAdministrador" class="form-label">Contraseña</label>
+              <input id="claveAdministrador" type="password" name="claveAdministrador" class="form-control"
+                  required>
+          </div>
+          <div class="col-sm-12 col-md-6">
+              <label for="confirmarClave" class="form-label">Confirmar contraseña</label>
+              <input id="confirmarClave" type="password" name="confirmarClave" class="form-control" required>
+          </div>
+          <div class="text-center">
+              <button type="reset" class="btn btn-secondary"><i class="bi bi-x-square"></i> Cancelar</button>
+              <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+          </div>
+      </div>
+  </form>
+  </main>
+
+  <!--=========-->
+  <!--FOOTER-->
+  <!--========-->
+  <footer>
+    <div id="footerIndex"></div>
+  </footer>
+  <script src="../../controladores/privado/privado.js"></script>
+  <script src="../../recursos/js/boostrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../../recursos/js/sweetalert.min.js"></script>
+  <!-- Llamada al controlador general de la aplicación -->
+  <script type="text/javascript" src="../../controladores/utilidades/componentes.js"></script>
+  <!-- Llamada al controlador del sitio privado -->
+  <script type="text/javascript" src="../../controladores/utilidades/admin.js"></script>
+  <!-- Llamada al controlador de la página web -->
+  <script type="text/javascript" src="../../controladores/privado/index.js"></script>
+
+</body>
+
+</html>
