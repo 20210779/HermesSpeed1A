@@ -13,6 +13,7 @@ if (isset($_GET['action'])) {
     // Se verifica si existe una sesión iniciada como cliente para realizar las acciones correspondientes.
     if (isset($_SESSION['idCliente'])) {
         $result['session'] = 1;
+        $result['idCliente'] = $_SESSION['idCliente'];
         // Se compara la acción a realizar cuando un cliente ha iniciado sesión.
         switch ($_GET['action']) {
             case 'getUser':

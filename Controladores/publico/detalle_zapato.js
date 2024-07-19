@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("idProducto").value = DATA.dataset.id_producto;
   } else {
     // Se presenta un mensaje de error cuando no existen datos para mostrar.
-    document.getElementById("mainTitle").textContent = DATA.error;
+   // document.getElementById("mainTitle").textContent = DATA.error;
     // Se limpia el contenido cuando no hay datos para mostrar.
-    document.getElementById("detalle").innerHTML = "";
+   // document.getElementById("detalle").innerHTML = "";
   }
 });
 

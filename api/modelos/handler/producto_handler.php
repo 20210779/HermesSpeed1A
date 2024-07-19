@@ -350,8 +350,7 @@ class ProductoHandler
     {
         $sql = 'SELECT p.nombre_producto, SUM(dp.cantidad_producto) AS total_vendido
     FROM productos p
-    JOIN detalle_zapatos dz ON p.id_producto = dz.id_producto
-    JOIN detalle_pedidos dp ON dz.id_zapato = dp.id_zapato
+    JOIN detalle_pedidos dp ON p.id_producto = dp.id_producto
     GROUP BY p.nombre_producto
     ORDER BY total_vendido DESC;
     ';
@@ -382,11 +381,9 @@ class ProductoHandler
     {
         $sql = 'SELECT p.nombre_producto, AVG(v.calificacion_producto) AS calificacion_promedio
         FROM productos p
-        JOIN detalle_zapatos dz ON p.id_producto = dz.id_producto
-        JOIN detalle_pedidos dp ON dz.id_zapato = dp.id_zapato
-        JOIN valoraciones v ON dp.id_detalle = v.id_detalle
+        JOIN valoraciones v ON p.id_producto  = v.id_producto 
         GROUP BY p.nombre_producto
-        ORDER BY calificacion_promedio DESC;
+        ORDER BY calificacion_promedio DESC
         ';
         return Database::getRows($sql);
     }
@@ -418,10 +415,11 @@ class ProductoHandler
     //Para el reporte
     public function productosMarca()
     {
-        $sql = 'SELECT nombre_producto, precio_producto, estado_producto
-                FROM productos
-                INNER JOIN marcas USING(id_marca)
-                WHERE id_marca = ?
+        $sql = 'SELECT nombre_producto, precio_producto, estado_producto, nombre_marca
+                FROM productos p              
+                INNER JOIN detalle_zapatos dz ON p.id_producto = p.id_producto
+                INNER JOIN marcas m ON dz.id_marca = m.id_marca
+                WHERE dz.id_marca = ?
                 ORDER BY nombre_producto';
         $params = array($this->marca);
         return Database::getRows($sql, $params);

@@ -15,7 +15,7 @@ class PedidoData extends PedidoHandler
     private $filename = null;
     const ESTADOS = array(array('atrasado', 'atrasado'), array('en_reparto', 'en_reparto'), array('ausente', 'ausente'), array('reembolso', 'reembolso'));
 
-     /*
+    /*
      *   Métodos para validar y establecer los datos.
      */
     public function setId($value)
@@ -42,7 +42,7 @@ class PedidoData extends PedidoHandler
     public function setCliente($value)
     {
         if (Validator::validateNaturalNumber($value)) {
-            $this->cliente_pedido = $value;
+            $this->cliente = $value;
             return true;
         } else {
             $this->data_error = 'El identificador del cliente es incorrecto';
@@ -119,9 +119,9 @@ class PedidoData extends PedidoHandler
         }
     }
 
-    public function setEstado($value,$enum_Options)
+    public function setEstado($value, $enum_Options)
     {
-        if (Validator::validateEnum($value,$enum_Options)) {
+        if (Validator::validateEnum($value, $enum_Options)) {
             $this->estado_pedido = $value;
             return true;
         } else {
@@ -130,14 +130,20 @@ class PedidoData extends PedidoHandler
         }
     }
 
-     // Método para obtener el error de los datos.
+    public function setClienteId($value)
+    {
+        if (Validator::validateNaturalNumber($value)) {
+            $this->cliente = $value;
+            return true;
+        } else {
+            $this->data_error = 'El identificador del cliente es incorrecto';
+            return false;
+        }
+    }
+
+    // Método para obtener el error de los datos.
     public function getDataError()
     {
         return $this->data_error;
     }
 }
-
-
-
-        
-

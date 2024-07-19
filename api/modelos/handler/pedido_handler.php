@@ -20,7 +20,7 @@ class PedidoHandler
     protected $talla_pedido = null;
     protected $direccion_pedido = null;
     protected $cliente_pedido = null;
-
+    protected $cliente = null;
 
 
 
@@ -212,5 +212,33 @@ class PedidoHandler
                 ORDER BY YEAR(fecha_pedido), MONTH(fecha_pedido);
                 ';
         return Database::getRows($sql);
+    }
+    //Generar factura
+    public function generarFacturas()
+    {
+        $sql = 'SELECT 
+            p.fecha_pedido AS fecha,
+            c.nombre_cliente,
+            c.direccion_cliente,
+            dp.id_producto,
+            pr.nombre_producto,
+            dp.cantidad_producto,
+            dp.precio_producto,
+            p.direccion_pedido,
+            (dp.cantidad_producto * dp.precio_producto) AS costo_total_producto
+        FROM 
+            pedidos p
+        JOIN 
+            clientes c ON p.id_cliente = c.id_cliente
+        JOIN 
+            detalle_pedidos dp ON p.id_pedido = dp.id_pedido
+        JOIN 
+            productos pr ON dp.id_producto = pr.id_producto
+        WHERE c.id_cliente = ?
+        ORDER BY 
+            p.fecha_pedido, p.id_pedido, pr.nombre_producto;
+                ';
+        $params = array($this->cliente);
+        return Database::getRows($sql, $params);
     }
 }
