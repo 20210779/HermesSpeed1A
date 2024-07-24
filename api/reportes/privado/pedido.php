@@ -22,7 +22,6 @@ if ($dataPedido = $pedido->pedidoPorEstado()) {
     // Se imprimen las celdas con los encabezados.
     $pdf->cell(126, 10, 'Estado', 1, 0, 'C', 1);
     $pdf->cell(30, 10, 'Cantidad', 1, 1, 'C', 1);
-
     // Se establece un color de relleno para mostrar el nombre de la categoría.
     $pdf->setFillColor(240);
     // Se establece la fuente para los datos de los productos.

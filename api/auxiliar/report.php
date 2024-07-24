@@ -83,6 +83,7 @@ class ReportPublic extends FPDF
         $this->setFont('Arial', 'I', 8);
         // Se imprime una celda con el número de página.
         $this->cell(0, 10, $this->encodeString('Página ') . $this->pageNo() . '/{nb}', 0, 0, 'C');
+        
     }
 }
 
@@ -109,7 +110,7 @@ class Report extends FPDF
         // Se crea una sesión o se reanuda la actual para poder utilizar variables de sesión en los reportes.
         session_start();
         // Se verifica si un administrador ha iniciado sesión para generar el documento, de lo contrario se direcciona a la página web principal.
-        if (isset($_SESSION['idCliente'])) {
+        if (isset($_SESSION['idAdmin'])) {
             // Se asigna el título del documento a la propiedad de la clase.
             $this->title = $title;
             // Se establece el título del documento (true = utf-8).
