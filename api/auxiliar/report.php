@@ -2,15 +2,13 @@
 // Se incluye la clase para generar archivos PDF.
 require_once('../../librerias/fpdf185/fpdf.php');
 
-
 /*
-*   Clase para definir las plantillas de los reportes del sitio publico.
+*   Clase para definir las plantillas de los reportes del sitio público.
 *   Para más información http://www.fpdf.org/
 */
 class ReportPublic extends FPDF
 {
     // Constante para definir la ruta de las vistas del sitio privado.
-    
     const CLIENT_URL = 'http://localhost/HERMESPEED/vistas/publico/';
     // Propiedad para guardar el título del reporte.
     private $title = null;
@@ -30,10 +28,10 @@ class ReportPublic extends FPDF
             $this->title = $title;
             // Se establece el título del documento (true = utf-8).
             $this->setTitle('HERMESPEED - Reporte', true);
-            // Se establecen los margenes del documento (izquierdo, superior y derecho).
+            // Se establecen los márgenes del documento (izquierdo, superior y derecho).
             $this->setMargins(15, 15, 15);
             // Se añade una nueva página al documento con orientación vertical y formato carta, llamando implícitamente al método header()
-            $this->addPage('p', 'letter');
+            $this->addPage('P', 'Letter');
             // Se define un alias para el número total de páginas que se muestra en el pie del documento.
             $this->aliasNbPages();
         } else {
@@ -62,13 +60,21 @@ class ReportPublic extends FPDF
         // Se ubica el título.
         $this->cell(20);
         $this->setFont('Arial', 'B', 15);
-        $this->cell(166, 10, $this->encodeString($this->title), 0, 1, 'C');
+        // Establecer color del título (por ejemplo, rojo)
+        $this->setTextColor(255, 255, 77);
+        $this->cell(146, 10, $this->encodeString($this->title), 0, 1, 'C');
+        // Restablecer color del texto a negro para el resto del documento
+        $this->setTextColor(0, 0, 0);
         // Se ubica la fecha y hora del servidor.
         $this->cell(20);
         $this->setFont('Arial', '', 10);
-        $this->cell(166, 10, 'Fecha/Hora: ' . date('d-m-Y H:i:s'), 0, 1, 'C');
+        $this->cell(146, 10, 'Fecha/Hora: ' . date('d-m-Y H:i:s'), 0, 1, 'C');
         // Se agrega un salto de línea para mostrar el contenido principal del documento.
         $this->ln(10);
+
+        // Dibujar bordes
+        $this->setDrawColor(0, 0, 0); // Negro
+        $this->rect(9, 10, 199, 260); // Rectángulo de borde
     }
 
     /*
@@ -78,15 +84,18 @@ class ReportPublic extends FPDF
     public function footer()
     {
         // Se establece la posición para el número de página (a 15 milímetros del final).
-        $this->setY(-15);
+        $this->setY(-30);
         // Se establece la fuente para el número de página.
         $this->setFont('Arial', 'I', 8);
         // Se imprime una celda con el número de página.
-        $this->cell(0, 10, $this->encodeString('Página ') . $this->pageNo() . '/{nb}', 0, 0, 'C');
+        $this->cell(0, 10, $this->encodeString('Página ') . $this->pageNo() . '/{nb}', 0, 1, 'C');
         
+        // Agregar derechos de autor
+        $this->setY(-20);
+        $this->setFont('Arial', 'I', 10);
+        $this->cell(0, 10, $this->encodeString('© 2024 HERMESPEED. Todos los derechos reservados.'), 0, 0, 'C');
     }
 }
-
 
 /*
 *   Clase para definir las plantillas de los reportes del sitio privado.
@@ -95,7 +104,6 @@ class ReportPublic extends FPDF
 class Report extends FPDF
 {
     // Constante para definir la ruta de las vistas del sitio privado.
-    
     const CLIENT_URL = 'http://localhost/HERMESPEED/vistas/Privado/';
     // Propiedad para guardar el título del reporte.
     private $title = null;
@@ -114,11 +122,13 @@ class Report extends FPDF
             // Se asigna el título del documento a la propiedad de la clase.
             $this->title = $title;
             // Se establece el título del documento (true = utf-8).
+ 
             $this->setTitle('HERMESPEED - Reporte', true);
-            // Se establecen los margenes del documento (izquierdo, superior y derecho).
+ 
+            // Se establecen los márgenes del documento (izquierdo, superior y derecho).
             $this->setMargins(15, 15, 15);
             // Se añade una nueva página al documento con orientación vertical y formato carta, llamando implícitamente al método header()
-            $this->addPage('p', 'letter');
+            $this->addPage('P', 'Letter');
             // Se define un alias para el número total de páginas que se muestra en el pie del documento.
             $this->aliasNbPages();
         } else {
@@ -147,13 +157,21 @@ class Report extends FPDF
         // Se ubica el título.
         $this->cell(20);
         $this->setFont('Arial', 'B', 15);
-        $this->cell(166, 10, $this->encodeString($this->title), 0, 1, 'C');
+        // Establecer color del título (por ejemplo, rojo)
+        $this->setTextColor(255, 255, 77);
+        $this->cell(146, 10, $this->encodeString($this->title), 0, 1, 'C');
+        // Restablecer color del texto a negro para el resto del documento
+        $this->setTextColor(0, 0, 0);
         // Se ubica la fecha y hora del servidor.
         $this->cell(20);
         $this->setFont('Arial', '', 10);
-        $this->cell(166, 10, 'Fecha/Hora: ' . date('d-m-Y H:i:s'), 0, 1, 'C');
+        $this->cell(146, 10, 'Fecha/Hora: ' . date('d-m-Y H:i:s'), 0, 1, 'C');
         // Se agrega un salto de línea para mostrar el contenido principal del documento.
         $this->ln(10);
+
+        // Dibujar bordes
+        $this->setDrawColor(0, 0, 0); // Negro
+        $this->rect(9, 10, 199, 260); // Rectángulo de borde
     }
 
     /*
@@ -163,10 +181,15 @@ class Report extends FPDF
     public function footer()
     {
         // Se establece la posición para el número de página (a 15 milímetros del final).
-        $this->setY(-15);
+        $this->setY(-30);
         // Se establece la fuente para el número de página.
         $this->setFont('Arial', 'I', 8);
         // Se imprime una celda con el número de página.
-        $this->cell(0, 10, $this->encodeString('Página ') . $this->pageNo() . '/{nb}', 0, 0, 'C');
+        $this->cell(0, 10, $this->encodeString('Página ') . $this->pageNo() . '/{nb}', 0, 1, 'C');
+        
+        // Agregar derechos de autor
+        $this->setY(-20);
+        $this->setFont('Arial', 'I', 10);
+        $this->cell(0, 10, $this->encodeString('© 2024 HERMESPEED. Todos los derechos reservados.'), 0, 0, 'C');
     }
 }

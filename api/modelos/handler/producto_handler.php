@@ -348,12 +348,15 @@ class ProductoHandler
 
     public function mayorCantidadVentas()
     {
-        $sql = 'SELECT p.nombre_producto, SUM(dp.cantidad_producto) AS total_vendido
-    FROM productos p
-    JOIN detalle_pedidos dp ON p.id_producto = dp.id_producto
-    GROUP BY p.nombre_producto
-    ORDER BY total_vendido DESC;
-    ';
+        $sql = '
+            SELECT p.nombre_producto, SUM(dp.cantidad_producto) AS total_vendido
+            FROM productos p
+            INNER JOIN detalle_zapatos dz ON p.id_producto = dz.id_producto
+            INNER JOIN detalle_pedidos dp ON dz.id_zapato = dp.id_zapato
+            GROUP BY p.nombre_producto
+            ORDER BY total_vendido DESC
+            LIMIT 1;
+        ';
         return Database::getRows($sql);
     }
 
@@ -379,14 +382,18 @@ class ProductoHandler
 
     public function valoracionProductosGrafico()
     {
-        $sql = 'SELECT p.nombre_producto, AVG(v.calificacion_producto) AS calificacion_promedio
-        FROM productos p
-        JOIN valoraciones v ON p.id_producto  = v.id_producto 
-        GROUP BY p.nombre_producto
-        ORDER BY calificacion_promedio DESC
+        $sql = '
+            SELECT p.nombre_producto, AVG(v.calificacion_producto) AS calificacion_promedio
+            FROM productos p
+            INNER JOIN detalle_zapatos dz ON p.id_producto = dz.id_producto
+            INNER JOIN detalle_pedidos dp ON dz.id_zapato = dp.id_zapato
+            INNER JOIN valoraciones v ON dp.id_detalle = v.id_detalle
+            GROUP BY p.nombre_producto
+            ORDER BY calificacion_promedio DESC
         ';
         return Database::getRows($sql);
     }
+
     public function ingresosMensualesGrafico()
     {
         $sql = 'SELECT DATE_FORMAT(p.fecha_pedido, "%Y-%m") AS mes, SUM(dp.precio_producto * dp.cantidad_producto) AS ingresos
@@ -396,7 +403,7 @@ class ProductoHandler
         ORDER BY mes';
         return Database::getRows($sql);
     }
-    
+
 
     /*
     *   Métodos para generar reportes.
@@ -415,14 +422,13 @@ class ProductoHandler
     //Para el reporte
     public function productosMarca()
     {
-        $sql = 'SELECT nombre_producto, precio_producto, estado_producto, nombre_marca
-                FROM productos p              
-                INNER JOIN detalle_zapatos dz ON p.id_producto = p.id_producto
-                INNER JOIN marcas m ON dz.id_marca = m.id_marca
-                WHERE dz.id_marca = ?
-                ORDER BY nombre_producto';
+        $sql = 'SELECT p.nombre_producto, p.precio_producto, p.estado_producto, m.nombre_marca
+                FROM productos p
+                INNER JOIN marcas m ON p.id_marca = m.id_marca
+                WHERE p.id_marca = ?
+                ORDER BY p.nombre_producto;
+';
         $params = array($this->marca);
         return Database::getRows($sql, $params);
     }
 }
-
