@@ -60,8 +60,6 @@ class ReportPublic extends FPDF
         // Se ubica el título.
         $this->cell(20);
         $this->setFont('Arial', 'B', 15);
-        // Establecer color del título (por ejemplo, rojo)
-        $this->setTextColor(255, 255, 77);
         $this->cell(146, 10, $this->encodeString($this->title), 0, 1, 'C');
         // Restablecer color del texto a negro para el resto del documento
         $this->setTextColor(0, 0, 0);
@@ -157,8 +155,6 @@ class Report extends FPDF
         // Se ubica el título.
         $this->cell(20);
         $this->setFont('Arial', 'B', 15);
-        // Establecer color del título (por ejemplo, rojo)
-        $this->setTextColor(255, 255, 77);
         $this->cell(146, 10, $this->encodeString($this->title), 0, 1, 'C');
         // Restablecer color del texto a negro para el resto del documento
         $this->setTextColor(0, 0, 0);
