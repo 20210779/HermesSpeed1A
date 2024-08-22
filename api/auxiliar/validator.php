@@ -12,6 +12,7 @@ class Validator
     private static $password_error = null;
     private static $file_error = null;
     private static $search_error = null;
+    private static $age_error = null;
 
     // Método para obtener el error al validar una contraseña.
     public static function getPasswordError()
@@ -31,6 +32,20 @@ class Validator
         return self::$file_error;
     }
 
+    public static function validateDateTime($value)
+    {
+        // El formato deseado es 'YYYY-MM-DD HH:MM:SS'
+        $format = 'Y-m-d H:i:s';
+        $dateTime = DateTime::createFromFormat($format, $value);
+
+        // Verifica que la fecha y hora sean válidas y coincidan con el formato esperado
+        if ($dateTime && $dateTime->format($format) === $value) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // Método para obtener el valor de búsqueda.
     public static function getSearchValue()
     {
@@ -42,6 +57,12 @@ class Validator
     {
         return self::$search_error;
     }
+
+     // Método para obtener el error al validar la edad.
+     public static function getAgeError()
+     {
+         return self::$age_error;
+     }
 
     /*
     *   Método para sanear todos los campos de un formulario (quitar los espacios en blanco al principio y al final).
@@ -179,6 +200,17 @@ public static function validateStar($value)
         return false;
     }
 }
+
+public static function validateAge($value)
+    {
+        // Se verifica que el valor sea un número entero mayor o igual a 18.
+        if (filter_var($value, FILTER_VALIDATE_INT, array('options' => array('min_range' => 18)))) {
+            return true;
+        } else {
+            self::$age_error = 'La edad debe ser un número mayor o igual a 18';
+            return false;
+        }
+    }
 
     /*
     *   Método para validar un dato alfabético (letras y espacios en blanco).

@@ -19,6 +19,15 @@ if (isset($_GET['action'])) {
                 $result['error'] = 'No se haya el id de este producto';
             }
             break;
+            case 'readProductosCategoria':
+                if (!$producto->setCategoria($_POST['idCategoria'])) {
+                    $result['error'] = $producto->getDataError();
+                } elseif ($result['dataset'] = $producto->readProductosCategoria()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['error'] = 'No existen productos para mostrar';
+                }
+                break;
             case 'readProductosCategoriaHFutbol':
                 if ($result['dataset'] = $producto->readProductosCategoriaHFutbol()) {
                     $result['status'] = 1;

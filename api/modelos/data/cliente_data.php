@@ -39,6 +39,17 @@ class ClienteData extends ClienteHandler
         }
     }
 
+    public function setEdad($value)
+    {
+        if (Validator::validateAge($value)) {
+            $this->edad = $value;
+            return true;
+        } else {
+            $this->data_error = Validator::getAgeError();
+            return false;
+        }
+    }
+
     public function setApellido($value, $min = 2, $max = 50)
     {
         if (!Validator::validateAlphabetic($value)) {

@@ -14,6 +14,7 @@ class ValoracionHandler
     protected $comentario_producto = null;
     protected $fecha_valoracion = null;
     protected $estado_comentario = null;
+    protected $id_producto = null;
 
     /*
     *   Métodos para realizar las operaciones SCRUD (search, create, read, update, and delete).
@@ -38,6 +39,16 @@ class ValoracionHandler
         return Database::getRows($sql);
     }
 
+    public function readAllComment()
+    {
+        $sql = 'SELECT id_valoracion,titulo_comentario, calificacion_producto, comentario_producto,fecha_valoracion, id_producto,nombre_cliente  
+        FROM valoraciones 
+        INNER JOIN clientes USING(id_cliente)
+        WHERE id_producto = ?';
+        $params = array($this->id_producto);
+        return Database::getRows($sql,$params);
+    }
+    
     public function readOne()
     {
         $sql = 'SELECT id_valoracion, calificacion_producto, comentario_producto, fecha_valoracion,estado_comentario

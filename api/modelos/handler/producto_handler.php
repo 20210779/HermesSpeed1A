@@ -59,6 +59,7 @@ class ProductoHandler
     {
         $sql = 'SELECT id_producto, nombre_producto, descripcion_producto, precio_producto, existencias_producto, imagen_producto, id_categoria, estado_producto
                 FROM productos
+                INNER JOIN categorias USING(id_categoria)
                 WHERE id_producto = ?';
         $params = array($this->id_producto);
         return Database::getRow($sql, $params);

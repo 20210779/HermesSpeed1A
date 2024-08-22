@@ -31,8 +31,7 @@ class TallaHandler
     {
         $sql = 'SELECT id_talla, tamano_talla, nombre_producto 
                 FROM tallas
-                INNER JOIN productos USING(id_producto)
-                ORDER BY nombre_producto';
+                INNER JOIN productos USING(id_producto)';
         return Database::getRows($sql);
     }
 

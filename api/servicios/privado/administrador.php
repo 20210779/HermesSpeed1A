@@ -115,10 +115,14 @@ if (isset($_GET['action'])) {
             case 'editProfile':
                 $_POST = Validator::validateForm($_POST);
                 if (
-                    !$administrador->setNombre($_POST['nombreAdmin']) or
-                    !$administrador->setApellido($_POST['apellidoAdmin']) or
-                    !$administrador->setCorreo($_POST['correoAdmin']) or
-                    !$administrador->setAlias($_POST['aliasAdmin'])
+                    !$cliente->setNombre($_POST['nombreAdmin']) or
+                    !$cliente->setApellido($_POST['apellidoAdmin']) or
+                    !$cliente->setCorreo($_POST['correoAdmin']) or
+                    !$clienter->setAlias($_POST['aliasAdmin']) or 
+                    !$cliente->setCorreo($_POST['correoAdmin']) or
+                    !$clienter->setAlias($_POST['aliasAdmin']) or 
+                    !$cliente->setCorreo($_POST['correoAdmin']) or
+                    !$clienter->setAlias($_POST['aliasAdmin'])     
                 ) {
                     $result['error'] = $administrador->getDataError();
                 } elseif ($administrador->editProfile()) {
